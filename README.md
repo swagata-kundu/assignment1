@@ -13,12 +13,14 @@ The application will be up and running at port 3000. There are three configurati
     `export NODE_ENV=mongo; npm start;`
 
 **import script**
-To import the data inside task.csv run the following command
+
+To import the data inside task_file.csv run the following command
 
  - `node import.js` this will import in mysql db.
  - `export NODE_ENV=mongo;node import.js;` this will insert data in mongodb collection.
- - No of maximum record can be set by setting env veriable `export MAX_INSERT=100` . Default it is 1000.
+ - No of maximum record insertion can be set by setting env veriable `export MAX_INSERT=100` . Default it is 1000.
 
 **live demo**
+
 The application is hosted at [http://saavn.assignment.swagatak.one](http://saavn.assignment.swagatak.one)
 Api documentaion is available at [saavn.assignment.swagatak.one/api-docs](saavn.assignment.swagatak.one/api-docs)
