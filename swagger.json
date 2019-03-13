@@ -1,16 +1,21 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Platform API DOC",
+        "description": "Assignment for custom analytics",
         "version": "1.0.0",
-        "title": "Platform Filter"
+        "title": "ASSIGNMET-PLATFORM"
     },
     "host": "localhost:3000",
     "basePath": "/api",
     "tags": [{
-        "name": "platform",
-        "description": "Everything about your Pets"
-    }],
+            "name": "platform",
+            "description": "Platfotm Filter for imported records"
+        },
+        {
+            "name": "analytics",
+            "description": "Custom Analytics services"
+        }
+    ],
     "schemes": [
         "http"
     ],
@@ -39,9 +44,112 @@
                         "schema": {
                             "$ref": "#/definitions/PlatFormResult"
                         }
+                    }
+                }
+            }
+        },
+        "/analytics": {
+            "post": {
+                "tags": [
+                    "analytics"
+                ],
+                "summary": "upload file for custom analytics",
+                "operationId": "upload file",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "file",
+                    "in": "formData",
+                    "required": true,
+                    "type": "file"
+                }],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/UploadResult"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "analytics"
+                ],
+                "summary": "Lists all analytics job",
+                "operationId": "listJobs",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AnalyticsList"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/analytics/{jobId}": {
+            "get": {
+                "tags": [
+                    "analytics"
+                ],
+                "summary": "Get Job analytic",
+                "operationId": "getJobAnalytics",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "name": "jobId",
+                        "in": "path",
+                        "description": "Job Id to find analytics",
+                        "required": true,
+                        "type": "string"
                     },
-                    "400": {
-                        "description": "Invalid status value"
+                    {
+                        "name": "platform",
+                        "in": "query",
+                        "description": "Status values that need to be considered for filter",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/PlatFormResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/analytics/status/{jobId}": {
+            "get": {
+                "tags": [
+                    "analytics"
+                ],
+                "summary": "Get Job status",
+                "description": "Can be used for pooling",
+                "operationId": "getJobStatus",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "jobId",
+                    "in": "path",
+                    "description": "Job Id to find status",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/JobStatus"
+                        }
                     }
                 }
             }
@@ -62,6 +170,39 @@
                 "platformShare": {
                     "type": "number",
                     "format": "float"
+                }
+            }
+        },
+        "UploadResult": {
+            "type": "object",
+            "properties": {
+                "jobId": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "AnalyticsList": {
+            "type": "object",
+            "properties": {
+                "jobId": {
+                    "type": "string"
+                },
+                "fileName": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "JobStatus": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string"
                 }
             }
         }

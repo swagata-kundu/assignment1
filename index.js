@@ -19,11 +19,11 @@ const errorHandler=new ErrorHandler();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(errorHandler.build());
 app.use(morgan('dev'));
 app.use(helmet());
 app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerConfig));
 app.use('/api', routes);
+app.use(errorHandler.build());
 app.use(errorHandler.unhandledRequest());
 
 db.connect().then(() => {
