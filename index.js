@@ -11,6 +11,8 @@ const routes = require('./lib/routes');
 const ErrorHandler=require('./lib/errorhandler');
 const db=require('./lib/db');
 
+let swaggerConfig=require('./swagger.json');
+swaggerConfig=Object.assign(swaggerConfig,{host:config.get('host_url')});
 
 const app = express();
 const errorHandler=new ErrorHandler();
@@ -20,7 +22,7 @@ app.use(bodyParser.json());
 app.use(errorHandler.build());
 app.use(morgan('dev'));
 app.use(helmet());
-app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(require('./swagger.json')));
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerConfig));
 app.use('/api', routes);
 app.use(errorHandler.unhandledRequest());
 

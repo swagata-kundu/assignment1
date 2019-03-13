@@ -1,0 +1,16 @@
+{
+    "apps": [
+      {
+        "name": "saavn-assignment",
+        "script": "./index.js",
+        "env": {
+          "NODE_ENV": "development"
+        },
+        "env_staging": {
+          "NODE_ENV": "staging"
+        },
+        "instances": 2,
+        "exec_mode":"cluster"
+      }
+    ]
+  }

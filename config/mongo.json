@@ -6,5 +6,6 @@
             "url":"mongodb://localhost:27017",
             "database":"platfrom"
         }
-    }
+    },
+    "host_url":"saavn.assignment.swagatak.one"
 }

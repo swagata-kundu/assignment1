@@ -1,18 +1,17 @@
 {
-    "port": 3000,
+    "port": 5000,
     "db_config": {
         "db_type": "mysql",
         "config": {
             "host": "localhost",
             "port": 3306,
             "user": "root",
-            "password": "password",
+            "password": "hrhk@1234",
             "database": "platform",
             "connectionLimit": 2,
             "waitForConnections": true,
             "multipleStatements": true
         }
     },
-    "host_url": "127.0.0.1:3000"
-
+    "host_url":"saavn.assignment.swagatak.one"
 }
