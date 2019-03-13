@@ -1,0 +1,73 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Platform API DOC",
+        "version": "1.0.0",
+        "title": "Platform Filter"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "tags": [{
+        "name": "platform",
+        "description": "Everything about your Pets"
+    }],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/platform": {
+            "get": {
+                "tags": [
+                    "platform"
+                ],
+                "summary": "Find User status by platform",
+                "description": "Multiple status values can be provided with comma separated strings",
+                "operationId": "findUserStatsByPlatform",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "platform",
+                    "in": "query",
+                    "description": "Status values that need to be considered for filter",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PlatFormResult"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "PlatFormResult": {
+            "type": "object",
+            "properties": {
+                "totalUids": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "totalUniqueUids": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "platformShare": {
+                    "type": "number",
+                    "format": "float"
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}

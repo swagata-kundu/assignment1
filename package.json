@@ -1,0 +1,26 @@
+{
+  "name": "saavn-assignment",
+  "version": "1.0.0",
+  "description": "Technical assignment",
+  "main": "app.js\t",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me@swagatak.in",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.2",
+    "body-parser": "^1.18.3",
+    "boom": "^7.3.0",
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "csv-parse": "^4.3.4",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "mongodb": "^3.1.13",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0",
+    "passerror": "^1.1.1",
+    "swagger-ui-express": "^4.0.2"
+  }
+}
