@@ -1,5 +1,12 @@
 ## Assignment
 
+**live demo**
+
+Api documentaion is available at [http://saavn.assignment.swagatak.one/api-docs](saavn.assignment.swagatak.one/api-docs)
+
+The application is hosted at [http://saavn.assignment.swagatak.one](http://saavn.assignment.swagatak.one)
+
+
 **steps to configure**
 
  - `git clone https://github.com/swagata-kundu/assignment1.git`
@@ -20,7 +27,3 @@ To import the data inside task_file.csv run the following command
  - `export NODE_ENV=mongo;node import.js;` this will insert data in mongodb collection.
  - No of maximum record insertion can be set by setting env veriable `export MAX_INSERT=100` . Default it is 1000.
 
-**live demo**
-
-The application is hosted at [http://saavn.assignment.swagatak.one](http://saavn.assignment.swagatak.one)
-Api documentaion is available at [saavn.assignment.swagatak.one/api-docs](saavn.assignment.swagatak.one/api-docs)
