@@ -17,7 +17,7 @@ const parser = parse({
 });
 
 //Maximum limit of insertion
-const MAX_INSERT = process.env.MAX_INSERT|| 1000;
+const MAX_INSERT = process.env.MAX_INSERT?parseInt(process.env.MAX_INSERT): 1000;
 
 //bathcing array
 let insertArray = [];

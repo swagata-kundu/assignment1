@@ -2,9 +2,9 @@
   "name": "saavn-assignment",
   "version": "1.0.0",
   "description": "Technical assignment",
-  "main": "app.js\t",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "me@swagatak.in",
   "license": "ISC",
@@ -20,7 +20,6 @@
     "mongodb": "^3.1.13",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
-    "passerror": "^1.1.1",
     "swagger-ui-express": "^4.0.2"
   }
 }
